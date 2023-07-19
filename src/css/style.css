@@ -81,8 +81,7 @@ section {
   transition: 0.2s;
 }
 
-.newItemEntry__button:hover,
-.newItemEntry__button:focus {
+.newItemEntry__button:hover {
   color: limegreen;
 }
 

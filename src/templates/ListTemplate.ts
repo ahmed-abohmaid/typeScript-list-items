@@ -7,7 +7,9 @@ interface DOMList {
 }
 
 export default class ListTemplate implements DOMList {
-  constructor(public ul: HTMLUListElement) {
+  ul: HTMLUListElement;
+
+  constructor() {
     this.ul = <HTMLUListElement>document.getElementById('listItems');
   }
 
@@ -36,7 +38,7 @@ export default class ListTemplate implements DOMList {
       });
 
       const label = <HTMLLabelElement>document.createElement('label');
-      label.htmlFor = item.id.toString();;
+      label.htmlFor = item.id.toString();
       label.textContent = item.item;
       li.append(label);
 
@@ -52,7 +54,6 @@ export default class ListTemplate implements DOMList {
 
       fragment.append(li);
     });
-
-    this.ul.append(fragment); 
+    this.ul.append(fragment);
   }
 }

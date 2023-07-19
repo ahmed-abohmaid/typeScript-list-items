@@ -5,9 +5,7 @@ import ListTemplate from './templates/ListTemplate';
 
 const initApp = (): void => {
   const fullList = new FullList();
-  const template = new ListTemplate(
-    <HTMLUListElement>document.getElementById('listItems')
-  );
+  const template = new ListTemplate();
 
   const formElement = <HTMLFormElement>document.getElementById('itemEntryForm');
   const clearBtn = <HTMLButtonElement>(
@@ -29,6 +27,7 @@ const initApp = (): void => {
     const listItem = new LisetItem(itemId, inputValue);
 
     fullList.addItem(listItem);
+    template.render(fullList);
   });
 
   clearBtn.addEventListener('click', (): void => {
