@@ -6,7 +6,7 @@ interface List {
   save(): void;
   clearList(): void;
   addItem(itemObj: LisetItem): void;
-  removeItem(id: string): void;
+  removeItem(id: number): void;
 }
 
 export default class FullList implements List {
@@ -47,7 +47,7 @@ export default class FullList implements List {
     this.save();
   }
 
-  removeItem(id: string): void {
+  removeItem(id: number): void {
     this._list = this._list.filter((item) => item.id != id);
     this.save();
   }

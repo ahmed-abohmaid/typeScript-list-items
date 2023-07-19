@@ -1,12 +1,12 @@
 export interface Item {
-  id: string;
+  id: number;
   item: string;
   checked: boolean;
 }
 
 export default class LisetItem implements Item {
   constructor(
-    private _id: string = '',
+    private _id: number = 0,
     private _item: string = '',
     private _checked: boolean = false
   ) {}
@@ -23,10 +23,10 @@ export default class LisetItem implements Item {
   public set item(value: string) {
     this._item = value;
   }
-  public get id(): string {
+  public get id(): number {
     return this._id;
   }
-  public set id(value: string) {
+  public set id(value: number) {
     this._id = value;
   }
 }

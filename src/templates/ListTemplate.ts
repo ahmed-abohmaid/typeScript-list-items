@@ -25,7 +25,7 @@ export default class ListTemplate implements DOMList {
 
       const check = <HTMLInputElement>document.createElement('input');
       check.type = 'checkbox';
-      check.id = item.id;
+      check.id = item.id.toString();
       check.checked = item.checked;
       check.tabIndex = 0;
       li.append(check);
@@ -36,7 +36,7 @@ export default class ListTemplate implements DOMList {
       });
 
       const label = <HTMLLabelElement>document.createElement('label');
-      label.htmlFor = item.id;
+      label.htmlFor = item.id.toString();;
       label.textContent = item.item;
       li.append(label);
 
