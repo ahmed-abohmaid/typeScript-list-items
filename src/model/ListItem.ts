@@ -5,14 +5,13 @@ export interface Item {
 }
 
 export default class LisetItem implements Item {
-
   constructor(
     private _id: string = '',
     private _item: string = '',
     private _checked: boolean = false
   ) {}
-  
-    public get checked(): boolean {
+
+  public get checked(): boolean {
     return this._checked;
   }
   public set checked(value: boolean) {
