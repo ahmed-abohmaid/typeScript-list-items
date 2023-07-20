@@ -25,11 +25,13 @@ export default class FullList implements List {
     // Check if the list is empty
     if (typeof storedList !== 'string') return;
 
-    const parsedList: LisetItem[] = JSON.parse(storedList);
+    const parsedList: { _id: number; _item: string; _checked: boolean }[] =
+      JSON.parse(storedList);
 
     parsedList.forEach((item) => {
-      const newListItem = new LisetItem(item.id, item.item, item.checked);
-      this.addItem(newListItem);
+      const newListItem = new LisetItem(item._id, item._item, item._checked);
+      console.log(newListItem);
+      this._list.push(newListItem);
     });
   }
 
