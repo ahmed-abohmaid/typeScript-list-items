@@ -28,6 +28,7 @@ const initApp = (): void => {
 
     fullList.addItem(listItem);
     template.render(fullList);
+    addInput.value = '';
   });
 
   clearBtn.addEventListener('click', (): void => {
