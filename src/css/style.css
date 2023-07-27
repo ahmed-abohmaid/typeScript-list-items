@@ -152,3 +152,13 @@ section {
     gap: 0.5rem;
   }
 }
+
+@media (max-width: 432px) {
+.newItemEntry__form {
+  flex-direction: column;
+  gap: 15px;
+}
+.newItemEntry__form .newItemEntry__button {
+  padding: 10px;
+}
+}
